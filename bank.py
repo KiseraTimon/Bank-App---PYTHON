@@ -1,10 +1,10 @@
+#Importing Modules
+from utils import message
+from accounts import login, register
+
+
 #Bank
 def main():
-    #Bank Messaging Format
-    def message(text):
-        message = f"\n***\n{text}\n***\n"
-        
-        print(message)
     
     #Welcome Message
     welcome = "Hello & Welcome To Py Bank | Your One Stop Digital Banking Solution"
@@ -29,16 +29,12 @@ def main():
                     
                     #Option 1
                     case 1:
-                        def account(service):
-                            pass
-                        print(service)
+                        login()
                         break
                     
                     #Option 2
                     case 2:
-                        def account(service):
-                            pass
-                        print(service)
+                        register()
                         break
                     
                     #Option 3
@@ -46,7 +42,7 @@ def main():
                         txt = "[ABORTING]...\n[SUCCESS]..."
                         message(txt)
                         break
-                
+            
             else:
                 err = "Please enter a number between 1 and 3"
                 message(err)
