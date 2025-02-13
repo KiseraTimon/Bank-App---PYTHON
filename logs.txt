@@ -1,0 +1,56 @@
+***
+--------------------------------------------------
+TIME OF OCCURENCE:---
+14-02-2025 02:37:31
+
+ERROR:---
+Error: invalid literal for int() with base 10: ''
+
+ERROR DETAILS:---
+Error: ValueError - invalid literal for int() with base 10: ''
+File: c:\Users\timon\OneDrive\Documents\Learning\Python\Bank App\Bank-App---PYTHON\accounts.py
+Line: 34---
+--------------------------------------------------
+
+***
+--------------------------------------------------
+TIME OF OCCURENCE:---
+14-02-2025 02:37:36
+
+ERROR:---
+Error: invalid literal for int() with base 10: ''
+
+ERROR DETAILS:---
+Error: ValueError - invalid literal for int() with base 10: ''
+File: c:\Users\timon\OneDrive\Documents\Learning\Python\Bank App\Bank-App---PYTHON\accounts.py
+Line: 34---
+--------------------------------------------------
+
+***
+--------------------------------------------------
+TIME OF OCCURENCE:---
+14-02-2025 02:37:39
+
+ERROR:---
+Error: invalid literal for int() with base 10: ''
+
+ERROR DETAILS:---
+Error: ValueError - invalid literal for int() with base 10: ''
+File: c:\Users\timon\OneDrive\Documents\Learning\Python\Bank App\Bank-App---PYTHON\accounts.py
+Line: 34---
+--------------------------------------------------
+
+***
+--------------------------------------------------
+TIME OF OCCURENCE:---
+14-02-2025 02:39:21
+
+ERROR:---
+Error: invalid literal for int() with base 10: ''
+
+ERROR DETAILS:---
+Error: ValueError - invalid literal for int() with base 10: ''
+File: c:\Users\timon\OneDrive\Documents\Learning\Python\Bank App\Bank-App---PYTHON\accounts.py
+Line: 34---
+--------------------------------------------------
+
