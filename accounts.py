@@ -22,51 +22,45 @@ def login():
     while True:
         try:
             #Capturing Details
-            user_email = str(input("Enter your username or email:\n"))
+            name_email = str(input("Enter your username or email:\n"))
             pin = int(input("Enter your pin:\n"))
             
-            for account, details in accounts:
-                for detail, value in details:
+            #Looping Dictionary
+            for account, details in accounts.items():
+                #Checking If The Username/Email Exists
+                if name_email in [details["email"], details["uname"]]:
+                    #Validating Pin
+                    if pin == details["pin"]:
+                        
+                        #Populating Session
+                        session = {
+                            "userID": account,
+                            "fname" : details["fname"],
+                            "lname" : details["lname"],
+                            "email" : details["email"],
+                            "phone" : details["phone"],
+                            "uname" : details["uname"],
+                        }
+                        
+                        #Success Messaage
+                        success = "You have been logged in successfully"
+                        message(success)
+                        
+                        from pages import home
+                        return home(session)
                     
-                    #Checking Username/Email Exists
-                    if user_email in value:
-                        #Validating Pin
-                        if pin == detail["pin"]:
-                            
-                            #Populating Session
-                            session = {
-                                "userID": account,
-                                "fname" : detail["fname"],
-                                "lname" : detail["lname"],
-                                "email" : detail["email"],
-                                "phone" : detail["phone"],
-                                "uname" : detail["uname"],
-                            }
-                            
-                            #Success Messaage
-                            success = "You have been logged in successfully"
-                            message(success)
-                            
-                            from pages import home
-                            return home(session)
-                        
-                        else:
-                            err = "Your pin is invalid"
-                            message(err)
-                        
                     else:
-                        err = "The username/email does not exists"
+                        err = "Your pin is invalid"
                         message(err)
+                    
+                else:
+                    err = "The username/email does not exists"
+                    message(err)
         
         #Error Handling
         except Exception as e:
             logger = 'logs/account-logs.txt'
             errhandler(e, logger)
-    
-        def users():
-            print (accounts)
-            
-        return users()
 
 #Registration Manager
 def register():
@@ -129,4 +123,3 @@ def register():
             errhandler(e, logger)
         
         return login()
-    
