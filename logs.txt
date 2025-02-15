@@ -54,3 +54,17 @@ File: c:\Users\timon\OneDrive\Documents\Learning\Python\Bank App\Bank-App---PYTH
 Line: 34---
 --------------------------------------------------
 
+***
+--------------------------------------------------
+TIME OF OCCURENCE:---
+15-02-2025 22:01:21
+
+ERROR:---
+Error: cannot unpack non-iterable int object
+
+ERROR DETAILS:---
+Error: TypeError - cannot unpack non-iterable int object
+File: c:\Users\timon\OneDrive\Documents\Learning\Python\Bank App\Bank-App---PYTHON\accounts.py
+Line: 28---
+--------------------------------------------------
+
