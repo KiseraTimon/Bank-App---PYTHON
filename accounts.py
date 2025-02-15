@@ -15,8 +15,60 @@ accounts = {
 
 #Login Manager
 def login():
-    txt = "Become Part Of The Py Bank Family Today"
+    txt = "Welcome Back. Enter Your Details To Continue"
     message(txt)
+    
+    #Error Handling
+    while True:
+        try:
+            #Capturing Details
+            user_email = str(input("Enter your username or email:\n"))
+            pin = int(input("Enter your pin:\n"))
+            
+            for account, details in accounts:
+                for detail, value in details:
+                    
+                    #Checking Username/Email Exists
+                    if user_email in value:
+                        #Validating Pin
+                        if pin == detail["pin"]:
+                            
+                            #Setting UserID & Authenticating
+                            userID = account
+                            
+                            #Success Messaage
+                            success = "You have been logged in successfully"
+                            message(success)
+                            break
+                        
+                        else:
+                            err = "Your pin is invalid"
+                            message(err)
+                        
+                    else:
+                        err = "The username/email does not exists"
+                        message(err)
+        
+        #Error Handling
+        except Exception as e:
+            #Logging The Error
+            log = f'Error: {e}'
+            
+            #Timestamp
+            time_str = timestp()
+            
+            #Error Details
+            error_details = error(e)
+            
+            with open('logs.txt', 'a') as f:
+                f.write(f'***\n--------------------------------------------------\nTIME OF OCCURENCE:---\n{time_str}\n\nERROR:---\n{log}\n\nERROR DETAILS:---\n{error_details}---\n--------------------------------------------------\n\n')
+            
+            err = f'An error occured. Kindly try again in a few minutes'
+            message(err)
+            
+            #Redirect to homepage
+            from bank import main
+            return main()
 
 #Registration Manager
 def register():
@@ -28,13 +80,13 @@ def register():
     while True:
         try:
             #Capturing User Details
-            fname = str(input("Enter your first name:\t\t")).strip()
-            lname = str(input("\nEnter your last name:\t\t")).strip()
-            email= str(input("\nEnter your email:\t\t")).strip()
-            phone= int(input("\nEnter your phone number:\t"))
-            uname = str(input("\nSet a username:\t\t\t")).strip()
-            pin = int(input("\nSet a pin [4 digits]:\t\t"))
-            pin_conf = int(input("\nConfirm your pin:\t\t"))
+            fname = str(input("Enter your first name:\n")).strip()
+            lname = str(input("\nEnter your last name:\n")).strip()
+            email= str(input("\nEnter your email:\n")).strip()
+            phone= int(input("\nEnter your phone number:\n"))
+            uname = str(input("\nSet a username:\n")).strip()
+            pin = int(input("\nSet a pin [4 digits]:\n"))
+            pin_conf = int(input("\nConfirm your pin:\n"))
             
             #Validating All Fields Are Filled
             if not (fname or lname or email or phone or uname or pin or pin_conf):
