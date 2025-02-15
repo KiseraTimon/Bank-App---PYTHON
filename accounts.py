@@ -60,7 +60,8 @@ def login():
         
         #Error Handling
         except Exception as e:
-            errhandler(e)
+            logger = 'logs/account-logs.txt'
+            errhandler(e, logger)
     
         def users():
             print (accounts)
@@ -124,7 +125,8 @@ def register():
     
         #Error Handling
         except Exception as e:
-            errhandler(e)
+            logger = 'logs/account-logs.txt'
+            errhandler(e, logger)
         
         return login()
     

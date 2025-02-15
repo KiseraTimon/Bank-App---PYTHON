@@ -7,14 +7,14 @@ def message(text):
     print(message)
     
 #Error Handler
-def errhandler(e):
+def errhandler(e, logger):
     #Timestamp
     time_str = timestp()
     
     #Error Details
     error_details = error(e)
     
-    with open('logs/account-logs.txt', 'a') as f:
+    with open(logger, 'a') as f:
         f.write(f'***\n--------------------------------------------------\nTIME OF OCCURENCE:---\n{time_str}\n\nERROR DETAILS:---\n{error_details}---\n--------------------------------------------------\n\n')
     
     err = f'An error occured. Kindly try again in a few minutes'
