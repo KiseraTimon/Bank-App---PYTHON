@@ -5,6 +5,27 @@ import traceback  # Import the traceback module
 def message(text):
     message = f"\n***\n{text}\n***\n"
     print(message)
+    
+#Error Handler
+def errhandler(e):
+    #Logging The Error
+    log = f'Error: {e}'
+    
+    #Timestamp
+    time_str = timestp()
+    
+    #Error Details
+    error_details = error(e)
+    
+    with open('logs/logs.txt', 'a') as f:
+        f.write(f'***\n--------------------------------------------------\nTIME OF OCCURENCE:---\n{time_str}\n\nERROR:---\n{log}\n\nERROR DETAILS:---\n{error_details}---\n--------------------------------------------------\n\n')
+    
+    err = f'An error occured. Kindly try again in a few minutes'
+    message(err)
+    
+    #Redirect to homepage
+    from bank import main
+    return main()
 
 # Timestamp
 def timestp():
