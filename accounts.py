@@ -46,7 +46,7 @@ def login():
                         success = "You have been logged in successfully"
                         message(success)
                         
-                        from pages import home
+                        from process import home
                         return home(session)
                     
                     else:
