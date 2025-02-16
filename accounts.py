@@ -10,6 +10,7 @@ accounts = {
         "phone" : "phone",
         "uname" : "uname",
         "pin" : "pin",
+        "type":"type"
     }
 }
 
@@ -40,6 +41,7 @@ def login():
                             "email" : details["email"],
                             "phone" : details["phone"],
                             "uname" : details["uname"],
+                            "type" : details["type"],
                         }
                         
                         #Success Messaage
@@ -108,6 +110,7 @@ def register():
                         "phone" : phone,
                         "uname" : uname,
                         "pin" : pin,
+                        "type": "client"
                     }
                 
                 success = "Your new account has been created successfully"
